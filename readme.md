@@ -9,7 +9,7 @@ What is this?
 Inspired by websites like http://www.140byt.es and http://microjs.com I've been striving to write small javascript libraries and functions.  I decided I would post them in a GIT repository and let any who needs use them,  I release these as is and I'll update them as I get time.
 
 
-*Object Literial Count:*<br />
+**Object Literial Count:**<br />
 JavaScripts has arrays have 'length' to get the number of object in an array.  Why don't object have the same functionality?  Here is what I came up with currently clocking in as 78k:
 
 <pre>
@@ -20,3 +20,6 @@ Usage:
 
 <pre>var x = { a:1, b:2, c:3 };
 console.log( x.count() + " should be 3" );</pre>
+
+Limitations:<br />
+Sicne this adds a new function to all object literials 'for(var k in obj)' loops will have a new option at the begining.  You wil have to account for that in your code.
