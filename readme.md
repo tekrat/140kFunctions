@@ -22,10 +22,10 @@ Usage:
 console.log( x.count() + " should be 3" );</pre>
 
 Limitations:<br />
-Since this adds a new function to all object literials 'for(var k in obj)' loops will have a new option at the begining.  You wil have to account for that in your code.
+Since this adds a new function to all object literials 'for(var k in obj)' loops will have a new option at the begining.  You wil have to account for that in your code.<br /><br />
 
-<b>Update</b>:
-Thanks to a thread on Reddit I've rewritten the function above into a true object property instead of a function.  The only downside is that its now 160k instead of the original 78k.
+<i>Update</i>:
+Thanks to a thread on <a href="http://www.reddit.com/r/javascript/comments/1shxb4/count_element_in_an_object_literial/">Reddit</a> I've rewritten the function above into a true object property instead of a function.  The only downside is that its now 160k instead of the original 78k.
 
 <pre>
 Object.defineProperty(Object.prototype,"count",{get:function(){var b=0;for(var a in this){b++}return b},set:function(a){},enumerable:false,configurable:false});
