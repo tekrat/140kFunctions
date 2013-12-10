@@ -22,4 +22,16 @@ Usage:
 console.log( x.count() + " should be 3" );</pre>
 
 Limitations:<br />
-Sicne this adds a new function to all object literials 'for(var k in obj)' loops will have a new option at the begining.  You wil have to account for that in your code.
+Since this adds a new function to all object literials 'for(var k in obj)' loops will have a new option at the begining.  You wil have to account for that in your code.
+
+<b>Update</b>:
+Thanks to a thread on Reddit I've rewritten the function above into a true object property instead of a function.  The only downside is that its now 160k instead of the original 78k.
+
+<pre>
+Object.defineProperty(Object.prototype,"count",{get:function(){var b=0;for(var a in this){b++}return b},set:function(a){},enumerable:false,configurable:false});
+</pre>
+
+Usage:
+
+<pre>var x = { a:1, b:2, c:3 };
+console.log( x.count + " should be 3" );</pre>
